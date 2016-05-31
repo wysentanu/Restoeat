@@ -24,6 +24,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return 'Ini dashboard Admin';
+        return view('admin.index');
     }
 }
