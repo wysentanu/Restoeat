@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing.index');
 });
 
 Route::get('restaurant/login', function () {
@@ -35,6 +35,7 @@ Route::get('restaurant/loginauto', function () {
 });
 
 Route::get('restaurant/dashboard', 'AdminController@index');
+Route::get('restaurant/signout', 'AdminController@signout');
 
 Route::auth();
 

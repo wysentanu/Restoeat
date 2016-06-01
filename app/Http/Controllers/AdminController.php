@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('restoran');
+        $this->middleware('restoran', ['except' => 'signout']);
     }
 
     /**
@@ -24,6 +25,15 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $page_title = "Restaurant Dashboard";
+        return view('admin.index')->with('page_title', $page_title);
     }
+
+    public function signout()
+    {
+        Auth::guard('restoran')->logout();
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/restaurant/login');
+    }
+
 }
