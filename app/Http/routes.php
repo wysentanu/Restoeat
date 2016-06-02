@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,12 +14,24 @@ Route::get('/', function () {
     return view('landing.index');
 });
 
-Route::get('restaurant/login', function () {
-  return view('loginresto');
+Route::group(['prefix' => 'restaurant'], function()
+{
+    // /restaurant/...
+    Route::get('/', 'AdminController@dashboard');
+    Route::get('login', 'AdminController@login');
+    Route::get('dashboard', 'AdminController@dashboard');
+    Route::get('signout', 'AdminController@signout');
+    Route::post('authentication', 'AdminController@authentication');
+    Route::get('authentication', 'AdminController@authentication');
 });
 
-Route::get('restaurant/loginauto', function () {
-  $auth = $auth = auth('restoran'); // Atau \Auth::guard('doctor')
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+
+/*Route::get('restaurant/loginauto', function () {
+  $auth = auth('restoran'); // Atau \Auth::guard('doctor')
 
   $credentials = [
       'email' =>  'qnDepnyHCm@gmail.com', // Nomor Induk Pegawai
@@ -32,11 +43,4 @@ Route::get('restaurant/loginauto', function () {
   }
 
   return 'Gagal login.';
-});
-
-Route::get('restaurant/dashboard', 'AdminController@index');
-Route::get('restaurant/signout', 'AdminController@signout');
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
+});*/
