@@ -107,12 +107,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="col-md-4 filter_grid">
 				<ul class="filter">
-					<li class="fil">Filter :</li>
+					<li class="fil">Filter : </li>
 					<li><a href=""> <i class="icon1"> </i> </a></li>
 					<li><a href=""> <i class="icon2"> </i> </a></li>
 					<li><a href=""> <i class="icon3"> </i> </a></li>
 					<li><a href=""> <i class="icon4"> </i> </a></li>
-					<li><a href=""> <i class="icon5"> </i> </a></li>
 				</ul>
 			</div>
 		</div>
@@ -182,7 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</div>
 							</div>
-							<i class="home1"> </i>
+							<i class="home2"> </i>
 							<div class="inner_wrap">
 								<h3>Lorem Ipsum is simply dummy text</h3>
 								<ul class="star1">
@@ -206,7 +205,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</div>
 							</div>
-							<i class="home"></i>
+							<i class="home2"></i>
 							<div class="inner_wrap">
 								<h3>Lorem Ipsum is simply dummy text</h3>
 								<ul class="star1">
@@ -244,7 +243,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-6 index-grids">
 						<div class="grid1">
 							<div class="index_img1"><img src="images/pic5.jpg" class="img-responsive" alt=""/></div>
-							<i class="m_home1"> </i>
+							<i class="m_home2"> </i>
 							<ul class="vision">
 								<li>Vision Agency</li>
 								<li class="desc"><a href="#"> <img src="images/star2.png" alt="">(236)</a></li>
@@ -435,39 +434,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="offering">
-				<h2>What can Hotel Deluxe offer to you ?</h2>
-				<h3>Ut wisi enim ad minim veniam, quis</h3>
-				<ul class="icons wow fadeInUp" data-wow-delay="0.4s">
-					<li><i class="icon1"> </i><span class="one"> </span></li>
-					<li><i class="icon2"> </i><span class="two"> </span></li>
-					<li><i class="icon3"> </i><span class="three"> </span></li>
-					<li><i class="icon4"> </i><span class="four"> </span></li>
-					<li><i class="icon5"> </i></li>
-				</ul>
-				<div class="real">
-					<h4>Reality</h4>
-					<div class="col-sm-6">
-						<ul class="service_grid">
-							<i class="s1"> </i>
-							<li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-								<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>
-							</li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>
-					<div class="col-sm-6">
-						<ul class="service_grid">
-							<i class="s2"> </i>
-							<li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-								<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>
-							</li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
+			<br><br>
 		</div>
 	</div>
 </div>
@@ -513,9 +480,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href=""><i class="google"> </i> </a></li>
 					<li><a href=""><i class="u_tube"> </i> </a></li>
 				</ul>
-				<div class="copy wow fadeInRight" data-wow-delay="0.4s">
-					<p> &copy; 2016 Hotel Deluxe. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

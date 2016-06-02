@@ -882,22 +882,22 @@ ul.filter li a i {
 	width: 45px;
 	height: 45px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat;
+	background: url(../images/spritefood.png)no-repeat;
 }
 ul.filter li a i:hover{
 	opacity:0.8;
 }
 ul.filter li a i.icon1{
-	background-position:-7px -39px;
+	background-position:-0px -39px;
 }
 ul.filter li a i.icon2{
-	background-position:-56px -39px;
+	background-position:-49px -39px;
 }
 ul.filter li a i.icon3{
-	background-position:-106px -39px;
+	background-position:-97px -39px;
 }
 ul.filter li a i.icon4{
-	background-position:-156px -39px;
+	background-position:-149px -39px;
 }
 ul.filter li a i.icon5{
 	background-position:-207px -39px;
@@ -949,7 +949,7 @@ i.home1{
 i.home2{
 	width: 67px;
 	height: 67px;
-	background: url(../images/img-sprite.png)no-repeat -170px -94px;
+	background: url(../images/spritefood.png)no-repeat -159px -94px;
 	display: block;
 	position: absolute;
 	bottom:100px;
@@ -958,7 +958,7 @@ i.home2{
 i.b_home {
 	width: 67px;
 	height: 67px;
-	background: url(../images/img-sprite.png)no-repeat -7px -93px;
+	background: url(../images/spritefood.png)no-repeat -0px -93px;
 	display: block;
 	position: absolute;
 	bottom: 110px;
@@ -967,7 +967,7 @@ i.b_home {
 i.b_home1{
 	width: 67px;
 	height: 67px;
-	background: url(../images/img-sprite.png)no-repeat -91px -93px;
+	background: url(../images/spritefood.png)no-repeat -84px -93px;
 	display: block;
 	position: absolute;
 	bottom:110px;
@@ -1203,7 +1203,7 @@ h4.blue{
 i.m_home {
 	width: 67px;
 	height: 67px;
-	background: url(../images/img-sprite.png)no-repeat -7px -93px;
+	background: url(../images/spritefood.png)no-repeat -0px -93px;
 	display: block;
 	position: absolute;
 	bottom:135px;
@@ -1212,12 +1212,22 @@ i.m_home {
 i.m_home1 {
 	width: 67px;
 	height: 67px;
-	background: url(../images/img-sprite.png)no-repeat -7px -169px;
+	background: url(../images/spritefood.png)no-repeat -84px -93px;
 	display: block;
 	position: absolute;
 	bottom:135px;
 	left: 12px;
 }
+i.m_home2 {
+	width: 67px;
+	height: 67px;
+	background: url(../images/spritefood.png)no-repeat -159px -94px;
+	display: block;
+	position: absolute;
+	bottom:135px;
+	left: 12px;
+}
+
 ul.vision{
 	padding: 0;
 	list-style: none;
