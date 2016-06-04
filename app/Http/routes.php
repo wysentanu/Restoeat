@@ -23,6 +23,7 @@ Route::group(['prefix' => 'restaurant'], function()
     Route::get('signout', 'AdminController@signout');
     Route::post('authentication', 'AdminController@authentication');
     Route::get('authentication', 'AdminController@authentication');
+    Route::get('profile', 'AdminController@profile');
 });
 
 Route::auth();

@@ -32,6 +32,11 @@ class AdminController extends Controller
         return view('admin.index')->with('page_title', $page_title);
     }
 
+    public function profile()
+    {
+        return view('admin.profile');
+    }
+
     public function login()
     {
         if(auth('restoran')->check())
@@ -66,7 +71,7 @@ class AdminController extends Controller
                 return redirect()->action('AdminController@dashboard');
             }
             else {
-                return false;
+                return 'Gagal Login';
             }
         }
     }
