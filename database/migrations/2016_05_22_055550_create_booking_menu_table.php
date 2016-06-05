@@ -14,10 +14,10 @@ class CreateBookingMenuTable extends Migration
     public function up()
     {
         Schema::create('booking_menu', function (Blueprint $table) {
-            $table->integer('id_menu')->unsigned();
-            $table->foreign('id_menu')->references('id')->on('menus')->onDelete('cascade');
-            $table->integer('id_booking')->unsigned();
-            $table->foreign('id_booking')->references('id')->on('bookings')->onDelete('cascade');
+            $table->integer('menu_id')->unsigned();
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
+            $table->integer('booking_id')->unsigned();
+            $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
             $table->timestamps();
         });
     }

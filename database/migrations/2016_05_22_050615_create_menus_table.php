@@ -18,8 +18,8 @@ class CreateMenusTable extends Migration
             $table->string('harga');
             $table->string('pic')->nullable();
             $table->string('deskripsi')->nullable();
-            $table->integer('id_restaurant')->unsigned();
-            $table->foreign('id_restaurant')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->integer('restaurant_id')->unsigned();
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -6,65 +6,24 @@
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <img class="profile-user-img img-responsive img-circle" src="{{ asset("/bower_components/AdminLTE/dist/img/user4-128x128.jpg") }}" alt="User profile picture">
+                @if(is_null(auth('restaurant')->user()->profile_pic))
+                    <img class="profile-user-img img-responsive img-circle" src="/images/default_rest.jpg" alt="User profile picture">
+                @else
+                    <img class="profile-user-img img-responsive img-circle" src="{{ auth('restaurant')->user()->profile_pic }}" alt="User profile picture">
+                @endif
 
-                <h3 class="profile-username text-center">{{ Auth::guard('restoran')->user()->nama }}</h3>
+                <h3 class="profile-username text-center">{{ Auth::guard('restaurant')->user()->nama }}</h3>
 
                 <p class="text-muted text-center">Software Engineer</p>
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                        <b>Followers</b> <a class="pull-right">1,322</a>
+                        <b>Ratings</b> <a class="pull-right">1,322</a>
                     </li>
                     <li class="list-group-item">
-                        <b>Following</b> <a class="pull-right">543</a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Friends</b> <a class="pull-right">13,287</a>
+                        <b>Total Reviews</b> <a class="pull-right">543</a>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-
-        <!-- About Me Box -->
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">About Me</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
-
-                <p class="text-muted">
-                    B.S. in Computer Science from the University of Tennessee at Knoxville
-                </p>
-
-                <hr>
-
-                <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
-
-                <p class="text-muted">Malibu, California</p>
-
-                <hr>
-
-                <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
-
-                <p>
-                    <span class="label label-danger">UI Design</span>
-                    <span class="label label-success">Coding</span>
-                    <span class="label label-info">Javascript</span>
-                    <span class="label label-warning">PHP</span>
-                    <span class="label label-primary">Node.js</span>
-                </p>
-
-                <hr>
-
-                <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
             <!-- /.box-body -->
         </div>
@@ -72,48 +31,67 @@
     </div>
     <!-- /.col -->
     <div class="col-md-9">
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="/restaurant/updateprofile" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
 
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                    <input name="nama" type="input" class="form-control" id="inputName" placeholder="Nama" value="{{ auth('restaurant')->user()->nama }}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{ auth('restaurant')->user()->email }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Address</label>
+
+                <div class="col-sm-10">
+                    <input name="alamat" type="input" class="form-control" id="inputName" placeholder="Address" value="{{ auth('restaurant')->user()->alamat }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Phone</label>
+
+                <div class="col-sm-10">
+                    <input name="phone" type="input" class="form-control" id="inputName" placeholder="Phone" value="{{ auth('restaurant')->user()->phone }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">City</label>
+
+                <div class="col-sm-10">
+                    <input name="kota" type="input" class="form-control" id="inputName" placeholder="City" value="{{ auth('restaurant')->user()->kota }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Country</label>
+
+                <div class="col-sm-10">
+                    <input name="negara" type="input" class="form-control" id="inputName" placeholder="Country" value="{{ auth('restaurant')->user()->negara }}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="description" class="col-sm-2 control-label">Description</label>
 
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="description" placeholder="Description"></textarea>
+                    <textarea name="description" class="form-control" id="description" placeholder="Description">{{ auth('restaurant')->user()->description }}</textarea>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-10">
-                    <label for="UploadImage">Update Profile Image</label>
-                    <input type="file" id="UploadImage">
+                <label for="UploadImage" class="col-sm-2 control-label">Update Profile Pic</label>
 
-                    <p class="help-block">Example block-level help text here.</p>
+                <div class="col-sm-10">
+                    <input class="form-control" type="file" id="UploadImage" name="image">
+                    <p class="help-block">Silahkan pilih file image.</p>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>

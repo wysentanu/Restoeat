@@ -23,4 +23,9 @@ class Restaurant extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function menus()
+    {
+        return $this->hasMany('App\Menu');
+    }
 }
