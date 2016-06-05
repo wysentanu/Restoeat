@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRestoranTable extends Migration
+class CreateRestaurantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateRestoranTable extends Migration
      */
     public function up()
     {
-        Schema::create('restoran', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->string('alamat');
@@ -20,9 +20,10 @@ class CreateRestoranTable extends Migration
             $table->string('kota');
             $table->string('negara');
             $table->string('username');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
-            $table->string('profile_pic');
+            $table->string('profile_pic')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -34,6 +35,6 @@ class CreateRestoranTable extends Migration
      */
     public function down()
     {
-        Schema::drop('restoran');
+        Schema::drop('restaurants');
     }
 }

@@ -24,6 +24,7 @@ Route::group(['prefix' => 'restaurant'], function()
     Route::post('authentication', 'AdminController@authentication');
     Route::get('authentication', 'AdminController@authentication');
     Route::get('profile', 'AdminController@profile');
+    Route::get('menus', 'AdminController@menus');
 });
 
 Route::auth();

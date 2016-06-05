@@ -47,9 +47,9 @@ return [
         ],
 
         // For restoran
-       'restoran' => [
+       'restaurant' => [
            'driver'   => 'session',
-           'provider' => 'restoran'
+           'provider' => 'restaurant'
        ]
     ],
 
@@ -77,9 +77,9 @@ return [
         ],
 
         // For admin
-        'restoran' => [
+        'restaurant' => [
             'driver' => 'eloquent',
-            'model' => App\Restoran::class,
+            'model' => App\Restaurant::class,
         ],
 
         // 'users' => [
@@ -115,8 +115,8 @@ return [
             'expire' => 60,
         ],
 
-        'restoran' => [
-            'provider' => 'restoran',
+        'restaurant' => [
+            'provider' => 'restaurant',
             'email' => 'auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,

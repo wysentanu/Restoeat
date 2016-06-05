@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
-class CreateMenuBookingTable extends Migration
+class CreateBookingMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +13,11 @@ class CreateMenuBookingTable extends Migration
      */
     public function up()
     {
-        Schema::create('menu_booking', function (Blueprint $table) {
+        Schema::create('booking_menu', function (Blueprint $table) {
             $table->integer('id_menu')->unsigned();
-            $table->foreign('id_menu')->references('id')->on('menu');
+            $table->foreign('id_menu')->references('id')->on('menus')->onDelete('cascade');
             $table->integer('id_booking')->unsigned();
-            $table->foreign('id_booking')->references('id')->on('booking');
+            $table->foreign('id_booking')->references('id')->on('bookings')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateMenuBookingTable extends Migration
      */
     public function down()
     {
-        Schema::drop('menu_booking');
+        Schema::drop('booking_menu');
     }
 }

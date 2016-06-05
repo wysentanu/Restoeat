@@ -12,14 +12,14 @@ class CreateReviewTable extends Migration
      */
     public function up()
     {
-        Schema::create('review', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_restoran')->unsigned();
-            $table->foreign('id_restoran')->references('id')->on('restoran');
-            $table->integer('id_customer')->unsigned();
-            $table->foreign('id_customer')->references('id')->on('users');
+            $table->integer('id_restaurant')->unsigned();
+            $table->foreign('id_restaurant')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->integer('rating')->unsigned();
-            $table->string('komentar');
+            $table->string('komentar')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateReviewTable extends Migration
      */
     public function down()
     {
-        Schema::drop('review');
+        Schema::drop('reviews');
     }
 }

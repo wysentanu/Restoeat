@@ -15,7 +15,7 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!auth('restoran')->check()) {
+        if (!auth('restaurant')->check()) {
             return redirect('/restaurant/login');
         }
 

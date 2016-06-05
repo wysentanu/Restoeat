@@ -15,7 +15,7 @@ class AdminController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('restoran', ['except' => [
+        $this->middleware('restaurant', ['except' => [
             'authentication',
             'login',
         ]]);
@@ -37,9 +37,14 @@ class AdminController extends Controller
         return view('admin.profile');
     }
 
+    public function menus()
+    {
+        return view('admin.menus');
+    }
+
     public function login()
     {
-        if(auth('restoran')->check())
+        if(auth('restaurant')->check())
         {
             return redirect()->action('AdminController@dashboard');;
         }
@@ -50,7 +55,7 @@ class AdminController extends Controller
     {
         if($request->isMethod('get'))
         {
-            if(auth('restoran')->check())
+            if(auth('restaurant')->check())
             {
                 return redirect()->action('AdminController@dashboard');
             }
@@ -60,7 +65,7 @@ class AdminController extends Controller
         }
         else if($request->isMethod('post'))
         {
-            $auth = auth('restoran');
+            $auth = auth('restaurant');
 
             $credentials = [
                 'email' =>  $request->input('email'), // Nomor Induk Pegawai
@@ -78,7 +83,7 @@ class AdminController extends Controller
 
     public function signout()
     {
-        Auth::guard('restoran')->logout();
+        Auth::guard('restaurant')->logout();
 
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/restaurant/login');
     }
