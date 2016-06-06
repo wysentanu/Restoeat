@@ -13,6 +13,17 @@
 Route::get('/', function () {
     return view('landing.index');
 });
+Route::get('/register', function(){
+    return view('user.register');
+});
+Route::post('/register', 'UserController@register');
+Route::get('/login', 'UserController@login');
+Route::get('/authentication', 'UserController@authentication');
+Route::post('/authentication', 'UserController@authentication');
+Route::get('/signout', 'UserController@signout');
+
+Route::get('/dashboard', 'UserController@dashboard');
+
 
 Route::group(['prefix' => 'restaurant'], function()
 {
@@ -28,10 +39,9 @@ Route::group(['prefix' => 'restaurant'], function()
     Route::get('menus', 'AdminController@menus');
 });
 
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
 
+//Route::auth();
 
 /*Route::get('restaurant/loginauto', function () {
   $auth = auth('restoran'); // Atau \Auth::guard('doctor')

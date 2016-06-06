@@ -14,7 +14,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => [
+            'register',
+        ]]);
     }
 
     /**
@@ -25,5 +27,25 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function register(Request $request)
+    {
+        $user = new App\User;
+        $user->name = $request->name;
+       $flight->name = $request->name;
+
+        $user->save();
+        /*$credentials = [
+            'email' =>  $request->input('email'),
+            'password' =>  $request->input('password'),
+        ];
+
+        if ($auth->attempt($credentials)) {
+            return redirect()->action('AdminController@dashboard');
+        }
+        else {
+            return 'Gagal Login';
+        }*/
     }
 }
