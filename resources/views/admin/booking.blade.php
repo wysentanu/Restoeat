@@ -131,11 +131,7 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
-      buttons: [
-        { extend: 'create', editor: myEditor },
-        { extend: 'edit',   editor: myEditor },
-        { extend: 'remove', editor: myEditor }
-    ]
+      
     });
   });
 </script>
