@@ -39,8 +39,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 					<ul class="social pull-right">
-						<li><button class="btn btn-signin "type="button" name="button">Sign In</button></li>
-						<li><button class="btn btn-signup"type="button" name="button">Register</button></li>
+						<li><a class="btn btn-signin "type="button" href="{{ url('/restaurant/login') }}" name="button">Sign In</a></li>
+						<li><a class="btn btn-signup" type="button" name="button">Register</a></li>
 					</ul>
 
 
