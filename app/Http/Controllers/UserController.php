@@ -15,6 +15,7 @@ class UserController extends Controller
         $this->middleware('auth', ['except' => [
             'login',
             'authentication',
+            'register',
         ]]);
     }
 
