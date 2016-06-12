@@ -11,7 +11,7 @@
 */
 
 Route::get('/', function () {
-    return view('landing.index');
+    return view('landing.detail');
 });
 Route::get('/register', function(){
     return view('user.register');

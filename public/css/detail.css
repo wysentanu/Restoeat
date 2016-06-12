@@ -1,0 +1,20 @@
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.breadcrumb {
+    margin-bottom: 0 !important;
+}
+
+.thumb-detail{
+    height: 80%;
+    width: 80%;
+}
+
+.sidebar {
+    margin-top: 25px;
+}
+
+input[readonly] {
+    background-color: white !important;
+}
