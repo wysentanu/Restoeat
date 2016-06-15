@@ -1,116 +1,80 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Login</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Luxury Furnish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="{{ asset("/css/bootstrap.css") }}" rel='stylesheet' type='text/css' />
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="{{ asset("/js/jquery-1.11.1.min.js") }}"></script>
-    <!-- Custom Theme files -->
-    <link href="{{ asset("/css/style0.css") }}" rel='stylesheet' type='text/css' />
-    <!-- Custom Theme files -->
-    <!--webfont-->
-    <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <!--//webfont-->
-    <script src="{{ asset("/js/jquery.easydropdown.js") }}"></script>
-    <!-- Add fancyBox main JS and CSS files -->
-    <script src="{{ asset("js/jquery.magnific-popup.js") }}" type="text/javascript"></script>
-    <link href="{{ asset("css/magnific-popup.css") }}" rel="stylesheet" type="text/css">
-    <script>
-    $(document).ready(function() {
-        $('.popup-with-zoom-anim').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
-    });
-    </script>
-    <!----details-product-slider--->
-</head>
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="index.html"><h6>Book Restaurants</h6><h2>RestoEat</h2></a>
-                </div>
-                <div class="header_right">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        </div>
-    </div>
-    <div class="main">
-        <div class="content_box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-9">
-                        <div class="dreamcrub">
-                            <ul class="breadcrumbs">
-                                <li class="home">
-                                    <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
-                                    <span>&gt;</span>
-                                </li>
-                                <li class="home">&nbsp;
-                                    &nbsp;Account
-                                    <span>&gt;</span>&nbsp;
-                                </li>
-                                <li class="women">
-                                    Login
-                                </li>
-                            </ul>
-                            <ul class="previous">
-                                <li><a href="index.html">Back to Previous Page</a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="account_grid">
-                            <div class="col-md-6 login-left">
-                                <h3>NEW CUSTOMERS</h3>
-                                <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                                <a class="acount-btn" href="register.html">Create an Account</a>
-                            </div>
-                            <div class="col-md-6 login-right">
-                                <h3>REGISTERED CUSTOMERS</h3>
-                                <p>If you have an account with us, please log in.</p>
-                                <form method="POST" action="/authentication">
-                                    <div>
-                                        <span>Email Address<label>*</label></span>
-                                        <input name="email" type="text">
-                                    </div>
-                                    <div>
-                                        <span>Password<label>*</label></span>
-                                        <input name="password" type="password">
-                                    </div>
-                                    <a class="forgot" href="#">Forgot Your Password?</a>
-                                    <input type="submit" value="Login">
-                                </form>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+    <title>RestoEat</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ asset("css/bootdip.css") }}" type="text/css">
+    {{-- <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> --}}
+
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset("font-awesome/css/font-awesome.min.css") }}" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{{ asset("css/magnific-popup.css") }}" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset("css/creative.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset("css/adedit.css") }}" type="text/css">
+
+
+  </head>
+
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a ><b>TracerStudy</b>Login</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+
+        <form action="/authentication" method="post">
+          <div class="form-group has-feedback">
+            <input onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('Anda belum memasukkan Username!')" required type="text" name="email" class="form-control" placeholder="Username">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input  onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('Anda belum memasukkan Password!')"required type="password" name="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              <a class="btn btn-block btn-flat">Batal</a>
+            </div><!-- /.col -->
+
+          </div>
+        </form>
+
+        <br>
+        <a href="#">Lupa Password</a><br>
+        <a href="register.html" class="text-center">Belum memiliki akun? Daftar sekarang!</a>
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js") }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ asset("js/scrollreveal.min.js") }}"></script>
+    <script src="{{ asset("js/jquery.easing.min.js") }}"></script>
+    <script src="{{ asset("js/jquery.fittext.js") }}"></script>
+    <script src="{{ asset("js/jquery.magnific-popup.min.js") }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ asset("js/creative.js") }}"></script>
+    @yield('jscript')
+  </body>
 </html>
