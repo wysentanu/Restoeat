@@ -15,12 +15,13 @@
 
             <ul class="nav navbar-nav navbar-form">
             <li>
-              <form action="index.html" method="post">
+              <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
-                    <input type="text" class="form-control"  name="tanggal_lahir" value="">
-                      <a class="input-group-addon">
-                        <span class="glyphicon glyphicon-search"></span>
-                      </a>
+                  <input type="text" name="q" class="form-control" placeholder="Search Restaurants...">
+                      <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                        </button>
+                      </span>
                 </div>
               </form>
             </li>
