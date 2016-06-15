@@ -1,7 +1,7 @@
 @extends('main.index')
 
-<link href="bower_components/bootstrap-star-rating/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
-<link href="bower_components/bootstrap-star-rating/css/theme-krajee-fa.css" media="all" rel="stylesheet" type="text/css" />
+<link href="{{ asset("bower_components/bootstrap-star-rating/css/star-rating.css") }}" media="all" rel="stylesheet" type="text/css" />
+<link href="../bower_components/bootstrap-star-rating/css/theme-krajee-fa.css" media="all" rel="stylesheet" type="text/css" />
 
 <!-- Bootstrap Date-Picker Plugin -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css"/>
@@ -10,7 +10,7 @@
 <div class="detail">
     <div class="container">
         <div class="col-md-3" style="margin-top:5%;">
-            <img class="profile-user-img img-responsive img-circle" src="images/veget.png" alt="" />
+            <img class="profile-user-img img-responsive img-circle" src="{{ asset("/images/veget.png") }}" alt="" />
         </div>
         <div class="col-md-3" style="margin-top:5%;">
             <h2>Restaurant Mad Dog</h2>
@@ -183,10 +183,10 @@
 </div>
 @stop
 @section('jscript')
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src=bower_components/bootstrap/dist/js/bootstrap.js></script>
+<script type="text/javascript" src="{{ asset("bower_components/jquery/dist/jquery.js") }}"></script>
+<script type="text/javascript" src="{{ asset("bower_components/bootstrap/dist/js/bootstrap.js") }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
-<script src="bower_components/bootstrap-star-rating/js/star-rating.js" type="text/javascript"></script>
+<script src="{{ asset("bower_components/bootstrap-star-rating/js/star-rating.js") }}" type="text/javascript"></script>
 <script>
 $('#bintang').rating({
     readonly: true,
