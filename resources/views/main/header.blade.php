@@ -42,13 +42,13 @@
                 </li>
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="img/portfolio/thumbnails/1.jpg" class="user-image" alt="User Image">
+                    <img src="{{ asset("img/portfolio/thumbnails/1.jpg") }}" class="user-image" alt="User Image">
                     <span class="hidden-xs">&nbsp &nbsp &nbsp<span class="glyphicon glyphicon-chevron-down"></span></span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header" >
-                      <img src="img/portfolio/thumbnails/1.jpg" class="img-circle" alt="User Image">
+                      <img src="{{ asset("img/portfolio/thumbnails/1.jpg") }}" class="img-circle" alt="User Image">
                       <p>
                         <small style="color:grey;">Tongos Nama Akun</small>
                       </p>

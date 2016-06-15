@@ -1,10 +1,11 @@
 @extends('main.index')
-
+@section('css')
 <link href="{{ asset("bower_components/bootstrap-star-rating/css/star-rating.css") }}" media="all" rel="stylesheet" type="text/css" />
-<link href="../bower_components/bootstrap-star-rating/css/theme-krajee-fa.css" media="all" rel="stylesheet" type="text/css" />
+<link href="{{ asset("bower_components/bootstrap-star-rating/css/theme-krajee-fa.css") }}" media="all" rel="stylesheet" type="text/css" />
 
 <!-- Bootstrap Date-Picker Plugin -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css"/>
+@stop
 
 @section('content')
 <div class="detail">
@@ -13,9 +14,9 @@
             <img class="profile-user-img img-responsive img-circle" src="{{ asset("/images/veget.png") }}" alt="" />
         </div>
         <div class="col-md-3" style="margin-top:5%;">
-            <h2>Restaurant Mad Dog</h2>
+            <h2>{{ $restaurant->nama }} Restaurant</h2>
             <input id="bintang" name="input-name" type="number" class="rating" value="3">
-            <h4>Fast Food | up to $40</h4>
+            <h4>@if($restaurant->kategori == 0) Vegetarian @elseif($restaurant->kategori == 1) Regular @else Fine Dining @endif| up to $40</h4>
         </div>
     </div>
 </div>
@@ -25,8 +26,8 @@
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a data-toggle="pill" href="#details">Details</a></li>
-                <li><a href="#panel-menu">Menu</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a data-toggle="pill" href="#panel-menu">Menu</a></li>
+                <li><a data-toggle="pill" href="#reviews">Reviews</a></li>
             </ul>
         </div>
         <div class="col-md-6">
@@ -39,12 +40,12 @@
 
                     <div class="tab-content">
                         <div id="home" class="tab-pane fade in active">
-                            <h3>About Mad Dog Restaurant</h3>
-                            <p>Restaurant ini adalah restaurant terbaik yang ada di Indonesia. Makanan dan Minuman yang dihidangkan sangatlah lezat.</p>
+                            <h3>About {{ $restaurant->nama }} Restaurant</h3>
+                            <p>{{ $restaurant->description }}</p>
                         </div>
                         <div id="address" class="tab-pane fade">
-                            <h3>Mad Dog Restaurant Address</h3>
-                            <p>Jl. Gang Bali, Indonesia</p>
+                            <h3>{{ $restaurant->nama }} Restaurant Address</h3>
+                            <p>{{ $restaurant->alamat }}</p>
                         </div>
                     </div>
                 </div>
@@ -61,14 +62,6 @@
                                 <tr>
                                     <th>Nama</th>
                                     <th>Harga</th>
-                                </tr>
-                                <tr>
-                                    <td>Nasi Kuning</td>
-                                    <td>$100</td>
-                                </tr>
-                                <tr>
-                                    <td>Tipat Cantok</td>
-                                    <td>$50</td>
                                 </tr>
                             </table>
                         </div>
@@ -184,7 +177,7 @@
 @stop
 @section('jscript')
 <script type="text/javascript" src="{{ asset("bower_components/jquery/dist/jquery.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bower_components/bootstrap/dist/js/bootstrap.js") }}"></script>
+{{-- <script type="text/javascript" src="{{ asset("bower_components/bootstrap/dist/js/bootstrap.js") }}"></script> --}}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
 <script src="{{ asset("bower_components/bootstrap-star-rating/js/star-rating.js") }}" type="text/javascript"></script>
 <script>
@@ -198,7 +191,7 @@ $('#bintang').rating({
 $(document).ready(function(){
     $('#date').datepicker({
         format: 'yyyy-mm-dd',
-        startDate: "-0d",
+        startDate: "0d",
         todayHighlight: true,
         autoclose: true,
     });

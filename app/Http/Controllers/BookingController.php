@@ -18,6 +18,13 @@ class BookingController extends Controller
 
     public function book(Request $request)
     {
+        $user = User::find($request->user_id);
+        $restaurant = Restaurant::find($request->restaurant_id);
+
+        if($user->credits < 50)
+        {
+            return 'gagal kurang kredit';
+        }
         $booking = new Booking;
         $booking->user_id = $request->user_id;
         $booking->restaurant_id = $request->restaurant_id;
@@ -27,16 +34,17 @@ class BookingController extends Controller
         $booking->booking_time = $request->time;
         $booking->message = $request->message;
 
-        $user = User::find($request->user_id);
-        $user->credits -= 100;
+        $user->credits -= 50;
         $user->save();
 
-        $restaurant = Restoran::find($request->restaurant_id);
-        $restaurant->credits += 100;
+        $restaurant->credits += 50;
         $restaurant->save();
 
-
-        if(Booking::where('booking_date', $request->date)->first() && Booking::where('booking_time', $request->time)->first())
+        if(Booking::where([
+            'booking_date' => $request->date,
+            'booking_time' => $request->time,
+            'table_no' => $request->table
+        ])->first())
         {
             return 'sudah dibook';
         }
