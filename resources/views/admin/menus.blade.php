@@ -465,7 +465,6 @@
 <script src="{{ asset("/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,

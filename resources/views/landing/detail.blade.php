@@ -172,7 +172,10 @@
                         <h3 class="panel-title">Book Now!</h3>
                     </div>
                     <div class="panel-body">
-                        <form method="post">
+                        <form method="post" action="{{ url('/book') }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="restaurant_id" value="1">
+
                             <div class="form-group ">
                                 <label class="control-label " for="date">
                                     Date
@@ -182,7 +185,7 @@
                                         <i class="fa fa-calendar">
                                         </i>
                                     </div>
-                                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" readonly="readonly"/>
+                                    <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" readonly="readonly"/>
                                 </div>
                             </div>
                             <div class="form-group ">
@@ -190,22 +193,22 @@
                                     Time
                                 </label>
                                 <select class="select form-control" id="time" name="time">
-                                    <option value="08:00">
+                                    <option value="08:00:00">
                                         08:00
                                     </option>
-                                    <option value="09:00">
+                                    <option value="09:00:00">
                                         09:00
                                     </option>
-                                    <option value="10:00">
+                                    <option value="10:00:00">
                                         10:00
                                     </option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="time">
+                                <label class="control-label" for="people">
                                     Number of People
                                 </label>
-                                <select class="select form-control" id="time" name="time">
+                                <select class="select form-control" id="people" name="people">
                                     <option value="1">
                                         1 Person
                                     </option>
@@ -217,6 +220,25 @@
                                     </option>
                                     <option value="4">
                                         4 People
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="table">
+                                    Table Number
+                                </label>
+                                <select class="select form-control" id="table" name="table">
+                                    <option value="1">
+                                        Table 1
+                                    </option>
+                                    <option value="2">
+                                        Table 2
+                                    </option>
+                                    <option value="3">
+                                        Table 3
+                                    </option>
+                                    <option value="4">
+                                        Table 4
                                     </option>
                                 </select>
                             </div>
@@ -263,7 +285,7 @@
 
         $(document).ready(function(){
             $('#date').datepicker({
-                format: 'mm/dd/yyyy',
+                format: 'yyyy-mm-dd',
                 startDate: "-0d",
                 todayHighlight: true,
                 autoclose: true,

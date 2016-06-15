@@ -10,12 +10,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing.detail');
-});
+Route::get('/', 'MainController@home');
 Route::get('/register', function(){
     return view('user.register');
 });
+Route::post('/book', 'BookingController@book');
 Route::post('/register', 'UserController@register');
 Route::get('/login', 'UserController@login');
 Route::get('/authentication', 'UserController@authentication');

@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
         $user = new App\User;
         $user->name = $request->name;
-       $flight->name = $request->name;
+        $flight->name = $request->name;
 
         $user->save();
         /*$credentials = [
