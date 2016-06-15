@@ -1,229 +1,95 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Luxury Furnish an E-Commerce online Shopping Category Flat Bootstarp responsive Website Template| Register :: w3layouts</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Luxury Furnish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="{{ asset("/css/bootstrap.css") }}" rel='stylesheet' type='text/css' />
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="{{ asset("/js/jquery-1.11.1.min.js") }}"></script>
-    <!-- Custom Theme files -->
-    <link href="{{ asset("/css/style0.css") }}" rel='stylesheet' type='text/css' />
-    <!-- Custom Theme files -->
-    <!--webfont-->
-    <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-    <!--//webfont-->
-    <script src="{{ asset("/js/jquery.easydropdown.js") }}"></script>
-    <!-- Add fancyBox main JS and CSS files -->
-    <script src="{{ asset("js/jquery.magnific-popup.js") }}" type="text/javascript"></script>
-    <link href="{{ asset("css/magnific-popup.css") }}" rel="stylesheet" type="text/css">
-    <script>
-    $(document).ready(function() {
-        $('.popup-with-zoom-anim').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-        });
-    });
-    </script>
-    <!----details-product-slider--->
-</head>
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <a href="index.html"><h6>Online Furnish</h6><h2>Luxury</h2></a>
-                </div>
-                <div class="header_right">
-                    <ul class="social">
-                        <li><a href=""> <i class="fb"> </i> </a></li>
-                        <li><a href=""><i class="tw"> </i> </a></li>
-                        <li><a href=""><i class="utube"> </i> </a></li>
-                        <li><a href=""><i class="pin"> </i> </a></li>
-                        <li><a href=""><i class="instagram"> </i> </a></li>
-                    </ul>
-                    <div class="lang_list">
-                        <select tabindex="4" class="dropdown">
-                            <option value="" class="label" value="">En</option>
-                            <option value="1">English</option>
-                            <option value="2">French</option>
-                            <option value="3">German</option>
-                        </select>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="about_box">
-                <ul class="login">
-                    <li class="login_text"><a href="login.html">Login</a></li>
-                    <li class="wish"><a href="checkout.html">Wish List</a></li>
-                    <div class='clearfix'></div>
-                </ul>
-                <ul class="quick_access">
-                    <li class="view_cart"><a href="checkout.html">View Cart</a></li>
-                    <li class="check"><a href="checkout.html">Checkout</a></li>
-                    <div class='clearfix'></div>
-                </ul>
-                <div class="search">
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                    <input type="submit" value="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="main">
-        <div class="container">
-            <div class="register">
-                <div class="register-but">
-                    <form action="/register" method="post">
-                        <div class="register-top-grid">
-                            <h3>PERSONAL INFORMATION</h3>
-                            <div>
-                                <span>First Name<label>*</label></span>
-                                <input name="first_name" type="text">
-                            </div>
-                            <div>
-                                <span>Last Name<label>*</label></span>
-                                <input name="last_name" type="text">
-                            </div>
-                            <div>
-                                <span>Email Address<label>*</label></span>
-                                <input name="email" type="text">
-                            </div>
-                            <div>
-                                <span>Phone<label>*</label></span>
-                                <input name="phone" type="text">
-                            </div>
-                        </div>
-                        <div class="register-bottom-grid">
-                            <h3>LOGIN INFORMATION</h3>
-                            <div>
-                                <span>Password<label>*</label></span>
-                                <input name="password" type="password">
-                            </div>
-                            <div>
-                                <span>Confirm Password<label>*</label></span>
-                                <input name="c_password" type="password">
-                            </div>
-                        </div>
-                        <input type="submit" value="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="brands">
-            <ul class="brand_icons">
-                <li><img src='images/icon1.png' class="img-responsive" alt=""/></li>
-                <li><img src='images/icon2.png' class="img-responsive" alt=""/></li>
-                <li><img src='images/icon3.png' class="img-responsive" alt=""/></li>
-                <li><img src='images/icon4.png' class="img-responsive" alt=""/></li>
-                <li class="last"><img src='images/icon5.png' class="img-responsive" alt=""/></li>
-            </ul>
-        </div>
-    </div>
-    <div class="container">
-        <div class="instagram_top">
-            <div class="instagram text-center">
-                <h3>Our Collections</h3>
-            </div>
-            <ul class="instagram_grid">
-                <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i1.jpg" class="img-responsive"alt=""/></a></li>
-                <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i2.jpg" class="img-responsive" alt=""/></a></li>
-                <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i3.jpg" class="img-responsive" alt=""/></a></li>
-                <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i4.jpg" class="img-responsive" alt=""/></a></li>
-                <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i5.jpg" class="img-responsive" alt=""/></a></li>
-                <li class="last_instagram"><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i6.jpg" class="img-responsive" alt=""/></a></li>
-                <div class="clearfix"></div>
-                <div id="small-dialog1" class="mfp-hide">
-                    <div class="pop_up">
-                        <h4>A Sample Photo Stream</h4>
-                        <img src="images/i_zoom.jpg" class="img-responsive" alt=""/>
-                    </div>
-                </div>
-            </ul>
-        </div>
-        <ul class="footer_social">
-            <li><a href="#"><i class="tw"> </i> </a></li>
-            <li><a href="#"> <i class="fb"> </i> </a></li>
-            <li><a href="#"><i class="pin"> </i> </a></li>
-            <div class="clearfix"></div>
-        </ul>
-    </div>
-</div>
-<div class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <h3>Category</h3>
-            <ul class="list1">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="about.html">Eshop</a></li>
-                <li><a href="about.html">Features</a></li>
-                <li><a href="about.html">New Collections</a></li>
-                <li><a href="typo.html">Typo</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-grid">
-            <h3>Our Account</h3>
-            <ul class="list1">
-                <li><a href="login.html">Your Account</a></li>
-                <li><a href="contact.html">Personal information</a></li>
-                <li><a href="contact.html">Addresses</a></li>
-                <li><a href="#">Discount</a></li>
-                <li><a href="checkout.html">Orders history</a></li>
-                <li><a href="about.html">Search Terms</a></li>
-            </ul>
-        </div>
-        <div class="footer-grid">
-            <h3>Our Support</h3>
-            <ul class="list1">
-                <li><a href="contact.html">Site Map</a></li>
-                <li><a href="about.html">Search Terms</a></li>
-                <li><a href="about.html">Advanced Search</a></li>
-                <li><a href="about.html">Mobile</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="contact.html">Mobile</a></li>
-                <li><a href="contact.html">Addresses</a></li>
-            </ul>
-        </div>
-        <div class="footer-grid">
-            <h3>Newsletter</h3>
-            <p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
-            <div class="search_footer">
-                <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-                <input type="submit" value="Submit">
-            </div>
-            <img src="images/payment.png" class="img-responsive" alt=""/>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>
-<div class="footer_bottom">
-    <div class="container">
-        <div class="copy">
-            <p>Copyright &copy; 2015 Luxury Furnish. All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-        </div>
-    </div>
-</div>
-</body>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RestoEat</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ asset("css/bootdip.css") }}" type="text/css">
+    {{-- <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> --}}
+
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset("font-awesome/css/font-awesome.min.css") }}" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{{ asset("css/magnific-popup.css") }}" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset("css/creative.css") }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset("css/adedit.css") }}" type="text/css">
+
+
+  </head>
+
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a ><b>RestoEat</b>SignUp</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <form id="signupForm" action="/register" method="post">
+          <div class="form-group has-feedback">
+            <input required pattern="\w+" onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('first_name tidak boleh Kosong!')" type="text" id="first_name" name="first_name" class="form-control" placeholder="First Name">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input required pattern="\w+" onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('last_name tidak boleh Kosong!')" type="text" id="last_name" name="last_name" class="form-control" placeholder="Last Name">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input oninvalid="setCustomValidity('Silahkan masukkan email yang valid!')" onchange="try{setCustomValidity('')}catch(e){}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" name="email" class="form-control" placeholder="Email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input required pattern="\w+" onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('last_name tidak boleh Kosong!')" type="text" id="phone" name="phone" class="form-control" placeholder="Phone">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input required id="password"type="password"  name="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input required id="confirm_password" type="c_password"  name="c_password" class="form-control" placeholder="Confirm Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign Up</button>
+              <a href="/"class="btn btn-block btn-flat">Batal</a>
+            </div><!-- /.col -->
+
+          </div>
+        </form>
+
+        <br>
+        <a href="/login" class="text-center">Sudah memiliki akun? Masuk sekarang!</a>
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+
+        <script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js") }}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset("js/bootstrap.min.js") }}"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="{{ asset("js/scrollreveal.min.js") }}"></script>
+        <script src="{{ asset("js/jquery.easing.min.js") }}"></script>
+        <script src="{{ asset("js/jquery.fittext.js") }}"></script>
+        <script src="{{ asset("js/jquery.magnific-popup.min.js") }}"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ asset("js/creative.js") }}"></script>
+        @yield('jscript')
+  </body>
 </html>

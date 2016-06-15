@@ -88,7 +88,7 @@ class AdminController extends Controller
                     'description' => $description,
                     'profile_pic' => '/rest_pic/'. $res_id. '/' . $fileName
                 ]);
-                return 'sukses';
+                return redirect('/restaurant');
             }
         }
         else {
@@ -101,7 +101,7 @@ class AdminController extends Controller
                 'negara' => $negara,
                 'description' => $description
             ]);
-            return 'sukses';
+            return redirect('/restaurant');
         }
     }
 

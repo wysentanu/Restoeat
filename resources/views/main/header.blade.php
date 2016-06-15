@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="/images/RestoEat.png" alt=""/></a>
+            <a class="navbar-brand page-scroll" href="/"><img src="/images/RestoEat.png" alt=""/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,7 @@
                 </li>
                 @if(!Auth::user())
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="/login">Sign In</a>
                 </li>
                 @else
                 <li class="dropdown user user-menu">
@@ -66,8 +66,11 @@
 
                     <!-- Menu Footer-->
                     <li class="user-footer">
+                      <div class="pull-right" style="margin-left:5px;">
+                        <a href="/signout" class="btn btn-primary btn-flat">Sign Out</a>
+                      </div>
                       <div class="pull-right">
-                        <a href="" class="btn btn-primary btn-flat">Sign Out</a>
+                        <a href="/dashboard" class="btn btn-success btn-flat">Dashboard</a>
                       </div>
                     </li>
                   </ul>

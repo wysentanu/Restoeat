@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use Auth;
 use File;
+use App\Booking;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
         {
             $user->password = bcrypt($request->password);
             $user->save();
-            return 'register success';
+           return redirect('/dashboard');
         }
 
         return 'gagal';
@@ -103,7 +104,7 @@ class UserController extends Controller
                 User::where('id', $res_id)->update([
                     'profile_pic' => '/user_pic/'. $res_id. '/' . $fileName
                 ]);
-                return 'sukses';
+                return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/dashboard');
             }
             return 'gagal';
         }
@@ -111,13 +112,15 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        return view('main.dashboard');
+        $bookings = Booking::where('user_id',Auth::user()->id);
+
+        return view('main.dashboard',compact('bookings'));
     }
 
     public function signout()
     {
         Auth::logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/login');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 }

@@ -32,7 +32,7 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a ><b>TracerStudy</b>Login</a>
+        <a ><b>RestoEat</b>Login</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
 
@@ -49,15 +49,14 @@
             <div class="col-xs-4"></div>
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-              <a class="btn btn-block btn-flat">Batal</a>
+              <a href="/" class="btn btn-block btn-flat">Batal</a>
             </div><!-- /.col -->
 
           </div>
         </form>
 
         <br>
-        <a href="#">Lupa Password</a><br>
-        <a href="register.html" class="text-center">Belum memiliki akun? Daftar sekarang!</a>
+        <a href="/register" class="text-center">Belum memiliki akun? Daftar sekarang!</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

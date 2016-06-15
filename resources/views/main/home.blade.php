@@ -29,7 +29,7 @@
         <div class="row no-gutter popup-gallery">
             @foreach($restaurants as $restaurant)
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
+                    <a href="/r/{{$restaurant->slug_nama}}" class="portfolio-box">
                         @if(is_null($restaurant->profile_pic))
                             @if($restaurant->category == 0)
                                 <img src="/images/veget.png" class="img-responsive" alt="">
@@ -77,102 +77,45 @@
       </div>
   </div>
 </section>
-<sectiond id="top_reviews">
-  <div class="container-fluid">
-      <div class="row no-gutter popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Vegetarian Restaurant
-                          </div>
-                          <div class="project-name">
-                              Mad Dog Vege
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Category
-                          </div>
-                          <div class="project-name">
-                              Project Name
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Category
-                          </div>
-                          <div class="project-name">
-                              Project Name
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Category
-                          </div>
-                          <div class="project-name">
-                              Project Name
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Category
-                          </div>
-                          <div class="project-name">
-                              Project Name
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-              <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
-                  <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
-                  <div class="portfolio-box-caption">
-                      <div class="portfolio-box-caption-content">
-                          <div class="project-category text-faded">
-                              Category
-                          </div>
-                          <div class="project-name">
-                              Project Name
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>
-      </div>
-  </div>
-</section>
+<sectiond id="featured">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            @foreach($restaurants as $restaurant)
+                <div class="col-lg-4 col-sm-6">
+                    <a href="/r/{{$restaurant->slug_nama}}" class="portfolio-box">
+                        @if(is_null($restaurant->profile_pic))
+                            @if($restaurant->category == 0)
+                                <img src="/images/veget.png" class="img-responsive" alt="">
+                            @elseif($restaurant->category == 1)
+                                <img src="/images/regular.png" class="img-responsive" alt="">
+                            @else
+                                <img src="/images/fine-dining.png" class="img-responsive" alt="">
+                            @endif
+                        @else
+                            <img src="{{ $restaurant->profile_pic }}" class="img-responsive" alt="">
+                        @endif
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    @if($restaurant->category == 0)
+                                        Vegetarian Restaurant
+                                    @elseif($restaurant->category == 1)
+                                        Regular Restaurant
+                                    @else
+                                        Fine Dining Restaurant
+                                    @endif
+                                </div>
+                                <div class="project-name">
+                                    {{ $restaurant->nama }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</sectiond>
 <section id="categories">
     <div class="container">
         <div class="row">

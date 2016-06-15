@@ -1,9 +1,9 @@
 @extends('main.index')
 @section('content')
-<div class="detail" >
+<div class="detail" style="height:50%" >
           <div class="container pull-left">
-              <div class="col-md-3" style="margin-top:2%;">
-                  <img class="profile-user-img img-responsive img-circle" src="img/banner.jpg" alt="" />
+              <div class="col-md-3" style="margin-top:70px;">
+                  <img class="profile-user-img img-responsive img-circle" src="{{Auth::user()->profile_pic}}" alt="" />
                       <h2>{{ Auth::user()->first_name }} {{Auth::user()->last_name}}</h2>
                       <h4>Food Traveler</h4>
               </div>
@@ -51,7 +51,7 @@
                             <h3 class="panel-title">RestoEat Credit</h3>
                         </div>
                         <div class="panel-body">
-                            <h4 class="fa fa-money "> Your Current Credit :</h4>
+                            <h4 class="fa fa-money "> Your Current Credit : {{ Auth::user()->credits }}</h4>
                         </div>
                     </div>
                 </div>
@@ -66,32 +66,31 @@
                               <table class="table">
                                   <tr>
                                       <th>Restaurants</th>
-                                      <th>Time</th>
+                                      <th>Date</th>
+                                      <th>
+                                        Time
+                                      </th>
                                       <th>Table</th>
                                       <th>
                                         Action
                                       </th>
                                   </tr>
+                                  @foreach($bookings as $booking)
                                   <tr>
-                                      <td>Mad Dog</td>
+                                      <td></td>
                                       <td>7 PM</td>
                                       <td>
                                         Test
                                       </td>
                                       <td>
-                                        <button class="btn btn-primary" type="button" name="button"><span class="fa fa-times"> Cancel</span></button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>Tipat Cantok</td>
-                                      <td>$50</td>
-                                      <td>
-                                        Test
+                                        test
                                       </td>
                                       <td>
                                         <button class="btn btn-primary" type="button" name="button"><span class="fa fa-times"> Cancel</span></button>
                                       </td>
                                   </tr>
+                                @endforeach
+
                               </table>
                           </div>
                       </div>
