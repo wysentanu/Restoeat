@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Restaurant;
 use App\Booking;
 use App\User;
+use Response;
 
 class BookingController extends Controller
 {
@@ -23,7 +24,7 @@ class BookingController extends Controller
 
         if($user->credits < 50)
         {
-            return 'gagal kurang kredit';
+            return Response::json("credit");
         }
         $booking = new Booking;
         $booking->user_id = $request->user_id;
@@ -34,27 +35,27 @@ class BookingController extends Controller
         $booking->booking_time = $request->time;
         $booking->message = $request->message;
 
-        $user->credits -= 50;
-        $user->save();
-
-        $restaurant->credits += 50;
-        $restaurant->save();
-
         if(Booking::where([
             'booking_date' => $request->date,
             'booking_time' => $request->time,
             'table_no' => $request->table
         ])->first())
         {
-            return 'sudah dibook';
+            return Response::json("sudah");
         }
         else
         {
             if($booking->save())
             {
-                return 'sukses book';
+                $user->credits -= 50;
+                $user->save();
+
+                $restaurant->credits += 50;
+                $restaurant->save();
+
+                return Response::json("sukses");
             }
         }
-        return 'gagal';
+        return Response::json("gagal");
     }
 }

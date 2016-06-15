@@ -88,15 +88,15 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Book Now!</h3>
                 </div>
-                <div class="panel-body">
-                    <form method="post" action="{{ url('/book') }}">
+                <div class="panel-body" id="book-panel">
+                    <form>
                         @if(Auth::user())
-                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
                         @endif
-                        <input type="hidden" name="restaurant_id" value="1">
+                        <input type="hidden" id="restaurant_id" name="restaurant_id" value="1">
 
                         <div class="form-group ">
-                            <label class="control-label " for="date">
+                            <label class="control-label" for="date">
                                 Date
                             </label>
                             <div class="input-group">
@@ -104,7 +104,7 @@
                                     <i class="fa fa-calendar">
                                     </i>
                                 </div>
-                                <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" readonly="readonly"/>
+                                <input class="form-control" id="date" name="date" placeholder="YYYY-MM-DD" type="text" value="{{ Carbon\Carbon::today('Asia/Makassar')->format('Y-m-d') }}"readonly="readonly"/>
                             </div>
                         </div>
                         <div class="form-group ">
@@ -163,7 +163,7 @@
                         </div>
                         <div class="form-group">
                             <div>
-                                <button class="btn btn-primary " name="submit" type="submit">
+                                <button class="btn btn-primary" id="submit">
                                     Book!
                                 </button>
                             </div>
@@ -194,6 +194,70 @@ $(document).ready(function(){
         startDate: "0d",
         todayHighlight: true,
         autoclose: true,
+        defaultDate: "2016-06-12",
+    });
+});
+
+$('#submit').on('click', function(e) {
+    e.preventDefault();
+
+    var user_id = $('#user_id').val();
+    var restaurant_id = $('#restaurant_id').val();
+    var date = $('#date').val();
+    var time = $('#time').val();
+    var people = $('#people').val();
+    var table = $('#table').val();
+
+    var formData = "user_id="+user_id+"&restaurant_id="+restaurant_id+"&date="+date+"&time="+time+"&people="+people+"&table="+table;
+
+    $.ajax({
+        type: "POST",
+        url: "/book",
+        data: formData,
+        dataType: 'json',
+    }).success(function( msg ) {
+        if(msg=="sukses")
+        {
+            $("#book-panel").append(
+                "<div class='alert alert-success' id='popup'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Book Success!</strong> Booking success.</div>"
+            );
+        }
+        else if(msg=="sudah")
+        {
+            $("#book-panel").append(
+                "<div class='alert alert-danger' id='popup'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Book Fail!</strong> Already Booked.</div>"
+            );
+        }
+        else if(msg=="credit")
+        {
+            $("#book-panel").append(
+                "<div class='alert alert-danger' id='popup'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Book Fail!</strong> Not enough Credit.</div>"
+            );
+        }
+        else
+        {
+            $("#book-panel").append(
+                "<div class='alert alert-danger' id='popup'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Book Fail!</strong> Unknown Error.</div>"
+            );
+        }
+
+        setTimeout(function() {
+            $("#popup").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 3000);
+
+    }).fail(function() {
+        $("#book-panel").append(
+            "<div class='alert alert-danger'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Book Fail!</strong> Not enough Credit.</div>"
+        );
+
+        setTimeout(function() {
+            $("#popup").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 3000);
+
     });
 });
 </script>
