@@ -24,9 +24,8 @@ Route::get('/login', 'UserController@login');
 Route::get('/authentication', 'UserController@authentication');
 Route::post('/authentication', 'UserController@authentication');
 Route::get('/signout', 'UserController@signout');
-
 Route::get('/dashboard', 'UserController@dashboard');
-
+Route::post('/uploadimage', 'UserController@uploadimage');
 
 Route::group(['prefix' => 'restaurant'], function()
 {

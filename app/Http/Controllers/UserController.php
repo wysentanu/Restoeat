@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use Auth;
+use File;
 
 class UserController extends Controller
 {
@@ -74,9 +75,43 @@ class UserController extends Controller
         }
     }
 
+    public function uploadimage(Request $request)
+    {
+        $this->validate($request, [
+            'image' => ['mimes:jpg,jpeg,JPEG,png,gif,bmp', 'max:2024'],
+        ]);
+        $res_id = Auth::user()->id;
+        $file = $request->file('image');
+
+        if(!is_null($file))
+        {
+            $extension = $file->getClientOriginalExtension();
+            $path = base_path()."/public/user_pic/" . $res_id;
+            $dbFileName = User::find($res_id)->profile_pic;
+
+            if(!File::exists($path))
+            {
+                $directory = File::makeDirectory($path);
+            }
+            $fileName = 'profile_pic.' .$extension;
+            $destination = base_path() . '/public/user_pic/' . $res_id . '/';
+            File::delete($destination . $dbFileName);
+            $sukses = $file->move($destination, $fileName);
+
+            if($sukses)
+            {
+                User::where('id', $res_id)->update([
+                    'profile_pic' => '/user_pic/'. $res_id. '/' . $fileName
+                ]);
+                return 'sukses';
+            }
+            return 'gagal';
+        }
+    }
+
     public function dashboard()
     {
-        return 'dashboard';
+        return view('main.dashboard');
     }
 
     public function signout()

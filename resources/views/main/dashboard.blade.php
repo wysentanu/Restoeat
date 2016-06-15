@@ -1,8 +1,10 @@
+@extends('main.index')
+@section('content')
 <div class="detail" >
           <div class="container pull-left">
               <div class="col-md-3" style="margin-top:2%;">
                   <img class="profile-user-img img-responsive img-circle" src="img/banner.jpg" alt="" />
-                      <h2>Surya Diputra</h2>
+                      <h2>{{ Auth::user()->first_name }} {{Auth::user()->last_name}}</h2>
                       <h4>Food Traveler</h4>
               </div>
 
@@ -17,58 +19,23 @@
                     <h3 class="panel-title">Make Reservation</h3>
                 </div>
                 <div class="panel-body">
-                    <form method="post">
+                    <form method="post" action="/uploadimage" enctype="multipart/form-data">
                         <div class="form-group ">
-                            <label class="control-label " for="date">
-                                Date
+                            <label class="control-label " for="image">
+                                Choose Image
                             </label>
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-calendar">
+                                    <i class="fa fa-camera">
                                     </i>
                                 </div>
-                                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" readonly="readonly"/>
+                                <input class="form-control" id="image" name="image" type="file"/>
                             </div>
-                        </div>
-                        <div class="form-group ">
-                            <label class="control-label" for="time">
-                                Time
-                            </label>
-                            <select class="select form-control" id="time" name="time">
-                                <option value="08:00">
-                                    08:00
-                                </option>
-                                <option value="09:00">
-                                    09:00
-                                </option>
-                                <option value="10:00">
-                                    10:00
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" for="time">
-                                Number of Person
-                            </label>
-                            <select class="select form-control" id="time" name="time">
-                                <option value="1">
-                                    1 Person
-                                </option>
-                                <option value="2">
-                                    2 People
-                                </option>
-                                <option value="3">
-                                    3 People
-                                </option>
-                                <option value="4">
-                                    4 People
-                                </option>
-                            </select>
                         </div>
                         <div class="form-group">
                             <div>
                                 <button class="btn btn-primary" name="submit" type="submit">
-                                    Book!
+                                    Upload!
                                 </button>
                             </div>
                         </div>
@@ -148,3 +115,4 @@
 
       </div>
   </div>
+@stop

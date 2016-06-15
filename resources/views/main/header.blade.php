@@ -40,20 +40,25 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+                @if(!Auth::user())
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+                @else
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{ asset("img/portfolio/thumbnails/1.jpg") }}" class="user-image" alt="User Image">
+                    <img src="{{ Auth::user()->profile_pic }}" class="user-image" alt="User Image">
                     <span class="hidden-xs">&nbsp &nbsp &nbsp<span class="glyphicon glyphicon-chevron-down"></span></span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header" >
-                      <img src="{{ asset("img/portfolio/thumbnails/1.jpg") }}" class="img-circle" alt="User Image">
+                      <img src="{{ Auth::user()->profile_pic }}" class="img-circle" alt="User Image">
                       <p>
-                        <small style="color:grey;">Tongos Nama Akun</small>
+                        <small style="color:grey;">{{ Auth::user()->first_name }}</small>
                       </p>
                       <p>
-                        <small style="color:grey;">Tongos Kredit</small>
+                        <small style="color:grey;">{{ Auth::user()->credits }}</small>
                       </p>
 
                     </li>
@@ -67,6 +72,7 @@
                     </li>
                   </ul>
                 </li>
+                @endif
             </ul>
         </div>
         <!-- /.navbar-collapse -->

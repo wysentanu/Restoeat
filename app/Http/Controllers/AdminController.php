@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use File;
+use App\Booking;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Auth;
