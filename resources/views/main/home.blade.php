@@ -184,7 +184,7 @@
     </div>
     <div class="container">
         <div class="row">
-
+          <a href="#">
             <div class="col-lg-4 col-md-8 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-leaf text-primary sr-icons"></i>
@@ -192,6 +192,8 @@
                     <p class="text-muted">Eating plants are the best idea!</p>
                 </div>
             </div>
+            </a>
+            <a href="#">
             <div class="col-lg-4 col-md-8 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-cutlery text-primary sr-icons"></i>
@@ -199,6 +201,8 @@
                     <p class="text-muted">There is no manners, hungers only!</p>
                 </div>
             </div>
+          </a>
+          <a href="#">
             <div class="col-lg-4 col-md-8 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-glass text-primary sr-icons"></i>
@@ -206,6 +210,7 @@
                     <p class="text-muted">Romantic, delightful eating experience!</p>
                 </div>
             </div>
+          </a>
         </div>
     </div>
 </section>
