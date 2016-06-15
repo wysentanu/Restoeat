@@ -12,7 +12,9 @@
     <title>RestoEat</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootdip.css" type="text/css">
+    {{-- <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> --}}
+
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -24,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+    <link rel="stylesheet" href="css/adedit.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,5 +61,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+    @yield('jscript')
 </body>
 </html>

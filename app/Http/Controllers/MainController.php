@@ -15,4 +15,11 @@ class MainController extends Controller
 
         return view('main.home', compact('restaurants'));
     }
+
+    public function detail($slug)
+    {
+        $restaurant = Restaurant::where('slug_nama', $slug)->firstOrFail();
+
+        return view('main.detail', compact('restaurant'));
+    }
 }

@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="img/RestoEat.png" alt=""/></a>
+            <a class="navbar-brand page-scroll" href="#page-top"><img src="/images/RestoEat.png" alt=""/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,6 +38,33 @@
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+                <li class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="img/portfolio/thumbnails/1.jpg" class="user-image" alt="User Image">
+                    <span class="hidden-xs">&nbsp &nbsp &nbsp<span class="glyphicon glyphicon-chevron-down"></span></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header" >
+                      <img src="img/portfolio/thumbnails/1.jpg" class="img-circle" alt="User Image">
+                      <p>
+                        <small style="color:grey;">Tongos Nama Akun</small>
+                      </p>
+                      <p>
+                        <small style="color:grey;">Tongos Kredit</small>
+                      </p>
+
+                    </li>
+                    <!-- Menu Body -->
+
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                      <div class="pull-right">
+                        <a href="" class="btn btn-primary btn-flat">Sign Out</a>
+                      </div>
+                    </li>
+                  </ul>
                 </li>
             </ul>
         </div>

@@ -9,11 +9,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+/*Route::get('/test', function(){
+    return view('main.detail');
+});*/
 
 Route::get('/', 'MainController@home');
 Route::get('/register', function(){
     return view('user.register');
 });
+Route::get('/r/{slug}', 'MainController@detail');
 Route::post('/book', 'BookingController@book');
 Route::post('/register', 'UserController@register');
 Route::get('/login', 'UserController@login');

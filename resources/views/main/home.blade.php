@@ -24,7 +24,7 @@
       </div>
   </div>
 </section>
-<section id="featured">
+<sectiond id="featured">
     <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
             @foreach($restaurants as $restaurant)
@@ -62,7 +62,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</sectiond>
 <section style="height:20px;" id="top_reviews">
   <div style="margin-top:-40px;"class="container">
       <div class="row">

@@ -202,7 +202,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/g.jpg');
+  background-image: url('/images/g.jpg');
   text-align: center;
   color: white;
 }
