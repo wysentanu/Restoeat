@@ -1,5 +1,5 @@
 <footer id="contact">
-    <section style="background-color:grey;height:10%px;">
+    <section style="background-color:white;height:10%px;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Join Our Growing Community</h2>
